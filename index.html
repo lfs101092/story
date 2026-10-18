@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>Калибровка</title>
+<style>
+  body { margin: 0; background: #000; overflow: hidden; height: 100vh; display: flex; justify-content: center; }
+  #s { position: relative; width: 100vw; height: 100vh; max-width: 56.25vh; background: #000; }
+  #v { position: absolute; top: 10px; right: 10px; width: 80px; opacity: 0.5; transform: scaleX(-1); z-index: 10; }
+  #c { display: none; }
+  .d { position: absolute; left: 50%; width: 30px; height: 30px; background: #0f0; border-radius: 50%; transform: translate(-50%, -50%); display: none; box-shadow: 0 0 15px #0f0; }
+  #h { position: absolute; bottom: 40px; width: 100%; text-align: center; color: #fff; font: 16px monospace; z-index: 10; }
+</style>
+</head>
+<body>
+  <div id="s">
+    <video id="v" autoplay playsinline muted></video>
+    <canvas id="c" width="160" height="120"></canvas>
+    
+    <!-- Точки: верхняя и нижняя -->
+    <div id="dot-top" class="d" style="top: 20%;"></div>
+    <div id="dot-bottom" class="d" style="top: 80%;"></div>
+    
+    <div id="h">Смотри на точку и моргни дважды</div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
